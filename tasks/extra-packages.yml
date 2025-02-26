@@ -25,6 +25,7 @@
   loop: "{{ pip_packages }}"
 
 - name: Install global Ruby gems.
+  become: yes
   gem:
     name: "{{ item.name | default(item) }}"
     state: "{{ item.state | default('present') }}"
