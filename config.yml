@@ -1,0 +1,135 @@
+---
+configure_dotfiles: false
+configure_terminal: true
+configure_osx: false
+configure_sublime: false
+configure_dock: true
+
+# Set to 'true' to configure the Dock via dockutil.
+dockitems_remove:
+ - Launchpad
+ - TV
+ - Podcasts
+ - 'App Store'
+ - 'Photo Booth'
+ - 'FaceTime'
+ - 'Messages'
+ - 'Music'
+ - 'News'
+ - 'Safari'
+ - 'Books'
+ - 'Freeform'
+ - 'Siri' # Siri is useless, in my humbled opinion
+ - 'Photos'
+
+dockitems_persist:
+  - name: "Firefox"
+    path: "/Applications/Firefox.app/"
+    pos: 1
+  - name: "Spotify"
+    path: "/Applications/Spotify.app/"
+    pos: 2
+  - name: "Visual Studio Code"
+    path: "/Applications/Visual Studio Code.app/"
+    pos: 3
+  - name: "Discord"
+    path: "/Applications/Discord.app/"
+    pos: 4
+  - name: "Slack"
+    path: "/Applications/Slack.app/"
+    pos: 5
+  - name: "Minecraft"
+    path: "/Applications/Minecraft.app/"
+    pos: 6
+  - name: "Lunar Client"
+    path: "/Applications/Lunar Client.app"
+    pos: 7
+
+configure_sudoers: false
+sudoers_custom_config: ''
+
+dotfiles_repo: https://github.com/AlphaGameDeveloper/Dotfiles.git
+dotfiles_repo_accept_hostkey: true
+dotfiles_repo_local_destination: ~/.dotfiles
+#dotfiles_files:
+#  - .zshrc
+
+homebrew_installed_packages:
+  # - ansible # Installed via Pip.
+  - autoconf
+  - bash-completion
+  - git
+  - gh
+  - gnupg
+  - nmap
+  - node # not a fan of Node personally but I need it
+  - nvm # not a fan of Node personally but I need it
+  - ssh-copy-id
+  - readline
+  - openssl
+  - wget
+  - zsh-history-substring-search
+  - asciinema
+  - bat
+  - awk
+  - curl
+  - awscli
+  - ffmpeg
+  - cloudflared
+  - htop
+  - btop
+  - sshpass # For Ansible!
+  - jq
+  - tree
+  - tmux
+  - neofetch
+  - fastfetch
+  - hyfetch
+  - python@3.12
+  - watch
+  - viu # For testing OwOFetch
+
+homebrew_taps: []
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - docker # my beloved
+  - firefox # better than Chrome - fight me
+  - slack # Internal communication at Penguin Empire
+  - sublime-text 
+  - visual-studio-code
+  - vlc
+  - discord
+  - spotify
+  - enpass
+  - minecraft
+  - lunar-client
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps: []
+mas_email: ""
+mas_password: ""
+
+osx_script: "~/.osx --no-restart"
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+composer_packages: []
+# - name: drush
+#   state: present # present/absent, default: present
+#   version: "^8.1" # default: N/A
+gem_packages: []
+
+npm_packages: []
+# - name: webpack
+#   state: present # present/absent/latest, default: present
+#   version: "^2.6" # default: N/A
+pip_packages: [] # I use venv.  This is prone to getting the externally-managed-environment error
+# - name: mkdocs
+#   state: present # present/absent/latest, default: present
+#   version: "0.16.3" # default: N/A
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
+
