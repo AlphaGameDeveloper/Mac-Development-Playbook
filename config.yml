@@ -99,6 +99,7 @@ homebrew_installed_packages:
   - python@3.12
   - python-tk
   - watch
+  - micro # best terminal text editor
   - viu # For testing OwOFetch
 
 homebrew_taps: []
@@ -116,7 +117,7 @@ homebrew_cask_apps:
   - enpass
   - minecraft
   - lunar-client
-  - cloudflare-warp # the scroll internet restrictions suck
+  - cloudflare-warp # the school internet restrictions suck
   - raspberry-pi-imager
   - steam
 
