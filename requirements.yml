@@ -2,9 +2,9 @@
 roles:
   - name: elliotweiser.osx-command-line-tools
   - name: geerlingguy.dotfiles
-  - name: ctorgalson.oh-my-zsh
+#  - name: ctorgalson.oh-my-zsh
 
 
 collections:
   - name: geerlingguy.mac
-  - name: community.general.osx_defaults
+  - name: community.general

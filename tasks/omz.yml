@@ -1,0 +1,17 @@
+- name: Ensure Zsh is installed
+  package:
+    name: zsh
+    state: present
+
+- name: Clone Oh My Zsh repository
+  git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: "~/.oh-my-zsh"
+    update: no
+    force: no
+    
+  become: false
+- name: Set Zsh as the default shell
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh

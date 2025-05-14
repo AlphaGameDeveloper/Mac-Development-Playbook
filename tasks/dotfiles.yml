@@ -4,16 +4,19 @@
   git:
     repo: "{{ dotfiles_repo }}"
     dest: "{{ dotfiles_repo_local_destination }}"
-    version: "{{ dotfiles_repo_version }}"
+    version: "master"
+    force: yes
     accept_hostkey: "{{ dotfiles_repo_accept_hostkey }}"
   become: false
 
 - name: Ensure all configured dotfiles are processed
   block:
-    - name: Handle shellscript type files (insert content for .zshrc)
-      copy:
+    - name: Handle shellscript type files
+      lineinfile:
         dest: "{{ dotfiles_home }}/{{ item.dest }}"
-        content: "source {{ dotfiles_repo_local_destination }}/{{ item.src }}"
+        line: "source {{ dotfiles_repo_local_destination }}/{{ item.src }}"
+        insertafter: BOF
+        create: yes
         mode: '0644'
       when: item.type == 'shellscript'
       loop: "{{ dotfiles_files }}"
