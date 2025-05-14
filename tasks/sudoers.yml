@@ -11,6 +11,17 @@
     sed_path: "{{ sed_which_result.stdout }}"
   when: sed_path is undefined
 
+
+# fingerprint auth sufficient
+- name: Add fingerprint auth to sudoers.
+  lineinfile:
+    path: /private/etc/sudoers.d/custom
+    line: "auth sufficient pam_fprintd.so"
+    state: present
+  become: true
+  when: configure_sudoers and ansible_facts['architecture'] == "arm64"
+  tags: sudoers
+
 # Sudoers configuration.
 - name: Copy sudoers configuration into place.
   copy:

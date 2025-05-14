@@ -7,7 +7,6 @@ configure_dock: true
 
 # Set to 'true' to configure the Dock via dockutil.
 dockitems_remove:
- - Launchpad
  - TV
  - Podcasts
  - 'App Store'
@@ -16,35 +15,45 @@ dockitems_remove:
  - 'Messages'
  - 'Music'
  - 'News'
- - 'Safari'
  - 'Books'
  - 'Freeform'
+ - 'Notes'
+ - "Maps"
+ - Contacts
  - 'Siri' # Siri is useless, in my humbled opinion
  - 'Photos'
 
 dockitems_persist:
+  - name: "Safari"
+    path: "/Applications/Safari.app"
+    pos: 1
   - name: "Firefox"
     path: "/Applications/Firefox.app/"
-    pos: 1
-  - name: "Spotify"
-    path: "/Applications/Spotify.app/"
     pos: 2
   - name: "Visual Studio Code"
     path: "/Applications/Visual Studio Code.app/"
     pos: 3
+  - name: "Spotify"
+    path: "/Applications/Spotify.app/"
+    pos: 4
   - name: "Discord"
     path: "/Applications/Discord.app/"
-    pos: 4
+    pos: 5
   - name: "Slack"
     path: "/Applications/Slack.app/"
-    pos: 5
-  - name: "Lunar Client"
-    path: "/Applications/Lunar Client.app"
     pos: 6
-  - name: "Steam"
-    path: "/Applications/Steam.app"
+  - name: "Mail"
+    path: "/Applications/Mail.app/"
     pos: 7
-
+  - name: "Calendar"
+    path: "/Applications/Calendar.app/"
+    pos: 8
+  - name: "System Settings"
+    path: "/Applications/System Settings.app/"
+    pos: 9
+  - name: Terminal
+    path: "/Applications/Terminal.app/"
+    pos: 10
 configure_sudoers: false
 sudoers_custom_config: ''
 
