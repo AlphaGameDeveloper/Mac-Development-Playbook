@@ -38,11 +38,11 @@ dockitems_persist:
   - name: "Slack"
     path: "/Applications/Slack.app/"
     pos: 5
-  - name: "Minecraft"
-    path: "/Applications/Minecraft.app/"
-    pos: 6
   - name: "Lunar Client"
     path: "/Applications/Lunar Client.app"
+    pos: 6
+  - name: "Steam"
+    path: "/Applications/Steam.app"
     pos: 7
 
 configure_sudoers: false
@@ -85,7 +85,9 @@ homebrew_installed_packages:
   - neofetch
   - fastfetch
   - hyfetch
+  - onefetch
   - python@3.12
+  - python-tk
   - watch
   - viu # For testing OwOFetch
 
@@ -104,6 +106,9 @@ homebrew_cask_apps:
   - enpass
   - minecraft
   - lunar-client
+  - cloudflare-warp # the scroll internet restrictions suck
+  - raspberry-pi-imager
+  - steam
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
