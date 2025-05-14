@@ -1,5 +1,5 @@
 ---
-configure_dotfiles: false
+configure_dotfiles: true
 configure_terminal: true
 configure_osx: false
 configure_sublime: false
@@ -51,8 +51,13 @@ sudoers_custom_config: ''
 dotfiles_repo: https://github.com/AlphaGameDeveloper/Dotfiles.git
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/.dotfiles
-#dotfiles_files:
-#  - .zshrc
+dotfiles_files:
+  - type: shellscript
+    src: zsh/rc.sh
+    dest: .zshrc
+  - type: shellscript
+    src: zsh/p10k.zsh
+    dest: .p10k.zsh
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
