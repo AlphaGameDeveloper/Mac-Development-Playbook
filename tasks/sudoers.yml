@@ -12,12 +12,19 @@
   when: sed_path is undefined
 
 
-# fingerprint auth sufficient
-- name: Add fingerprint auth to sudoers.
-  lineinfile:
-    path: /private/etc/sudoers.d/custom
-    line: "auth sufficient pam_fprintd.so"
-    state: present
+- name: Copy sudo_local.template into place.
+  copy:
+    src: /etc/pam.d/sudo_local.template
+    dest: /etc/pam.d/sudo_local
+    mode: 0644
+    owner: root
+  become: true
+
+- name: Uncomment the auth sufficient line in sudo_local.
+  replace:
+    path: /etc/pam.d/sudo_local
+    regexp: '^#\s*auth\s+sufficient\s+pam_tid\.so'
+    replace: 'auth       sufficient     pam_tid.so'
   become: true
   when: configure_sudoers and ansible_facts['architecture'] == "arm64"
   tags: sudoers

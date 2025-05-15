@@ -52,9 +52,9 @@ dockitems_persist:
     path: "/Applications/System Settings.app/"
     pos: 9
   - name: Terminal
-    path: "/Applications/Terminal.app/"
+    path: "/System/Applications/Utilities/Terminal.app"
     pos: 10
-configure_sudoers: false
+configure_sudoers: true
 sudoers_custom_config: ''
 
 dotfiles_repo: https://github.com/AlphaGameDeveloper/Dotfiles.git
@@ -81,7 +81,7 @@ homebrew_installed_packages:
   - gh
   - gnupg
   - nmap
-  - node # not a fan of Node personally but I need it
+#  - node # not a fan of Node personally but I need it
   - nvm # not a fan of Node personally but I need it
   - ssh-copy-id
   - readline
